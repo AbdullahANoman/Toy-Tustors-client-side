@@ -1,30 +1,44 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  const [action,setAction] = useState(true)
-
+  const [action, setAction] = useState(true);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
-  }, [user,action]);
+  }, [user, action]);
 
-
-  const handleDelete = _id =>{
-    console.log(_id)
-    fetch(`http://localhost:5000/allToys/${_id}`,{
-        method: 'DELETE'
-    })
-    .then(res=>res.json())
-    .then(data=>{
-        console.log(data)
-        setAction(!action)
-    })
-  }
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to delete ?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/allToys/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setAction(!action);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your Record has been deleted.", "success");
+            }
+          });
+      }
+    });
+    console.log(_id);
+  };
   console.log(toys);
   return (
     <>
@@ -58,7 +72,12 @@ const MyToys = () => {
                   <button className="btn btn-primary">Update</button>
                 </td>
                 <td>
-                  <button onClick={()=>handleDelete(toy?._id)} className="btn btn-primary">Delete</button>
+                  <button
+                    onClick={() => handleDelete(toy?._id)}
+                    className="btn btn-primary"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

@@ -24,9 +24,9 @@ const AddToys = () => {
         console.log(data);
         if (data.insertedId) {
           Swal.fire({
-            title: "Error!",
+            title: "Success!",
             text: "Do you want to continue",
-            icon: "error",
+            icon: "success",
             confirmButtonText: "Cool",
           });
         }
@@ -86,7 +86,7 @@ const AddToys = () => {
                 <span>Seller Name</span>
               </label>
               <input
-                defaultValue={user?.name}
+                defaultValue={user?.displayName}
                 {...register("sellerName", { required: true })}
                 className="input input-bordered w-full"
                 placeholder="seller name"
