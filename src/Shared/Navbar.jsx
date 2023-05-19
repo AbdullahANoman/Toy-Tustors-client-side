@@ -1,25 +1,24 @@
-
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut, userName, userPhotoUrl } = useContext(AuthContext);
   console.log(userName, userPhotoUrl);
 
   const handleLogout = () => {
     logOut();
   };
-    return (
-        <div className="bg-gradient-to-r from-[#070d31] to-[#9873FF] mt-0 text-white">
+  return (
+    <div className="bg-gradient-to-r from-[#070d31] to-[#9873FF] mt-0 text-white">
       <div className=" px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
           <Link to="/" className="inline-flex items-center">
             <span className="ml-2 text-xl font-bold tracking-wide text-white">
-              Food BuZz
+              ToyTutors
             </span>
           </Link>
 
@@ -43,24 +42,32 @@ const Navbar = () => {
                 All Toys
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/myToys"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-                title="My Toys"
-              >
-                My Toys
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/addToys"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-                title="Add Toys"
-              >
-                Add Toys
-              </NavLink>
-            </li>
+            {user && (
+              <>
+                <li>
+                  <NavLink
+                    to="/myToys"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                    title="My Toys"
+                  >
+                    My Toys
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/addToys"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                    title="Add Toys"
+                  >
+                    Add Toys
+                  </NavLink>
+                </li>
+              </>
+            )}
 
             <li>
               <NavLink
@@ -122,7 +129,7 @@ const Navbar = () => {
                     <div>
                       <Link to="/" className="inline-flex items-center">
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          Food BuZz
+                        ToyTutors
                         </span>
                       </Link>
                     </div>
@@ -145,7 +152,25 @@ const Navbar = () => {
                           Home
                         </Link>
                       </li>
-
+                      <li className="text-black">
+                        <Link to="/allToys" className="default">
+                          All Toys
+                        </Link>
+                      </li>
+                      {user && (
+                        <>
+                          <li className="text-black">
+                            <Link to="/myToys" className="default">
+                              My Toys
+                            </Link>
+                          </li>
+                          <li className="text-black">
+                            <Link to="/add Toys" className="default">
+                              Add Toys
+                            </Link>
+                          </li>
+                        </>
+                      )}
                       <li>
                         <Link
                           to="/blog"
@@ -198,7 +223,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Navbar;
