@@ -17,9 +17,17 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
           <Link to="/" className="inline-flex items-center">
-            <span className="ml-2 text-xl font-bold tracking-wide text-white">
-              ToyTutors
-            </span>
+            <div className="flex items-center gap-2">
+              <img
+                className="w-10 "
+                src="https://i.ibb.co/Kbb9BWV/6951198.png"
+                alt=""
+              />
+              <p className="text-xl font-bold">
+                <span className="text-[#32BDF2]">Toy</span>
+                <span className="text-[#FF6A98]">Tutors</span>
+              </p>
+            </div>
           </Link>
 
           {/* Nav Items Section */}
@@ -129,7 +137,7 @@ const Navbar = () => {
                     <div>
                       <Link to="/" className="inline-flex items-center">
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        ToyTutors
+                          ToyTutors
                         </span>
                       </Link>
                     </div>
