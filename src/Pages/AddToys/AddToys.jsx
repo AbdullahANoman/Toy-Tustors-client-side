@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
@@ -11,15 +12,44 @@ const AddToys = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    fetch("http://localhost:5000/addToy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Error!",
+            text: "Do you want to continue",
+            icon: "error",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
 
   console.log(watch("example")); // watch input value by passing the name of it
 
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-    <div className=" md:px-[140px] py-5 min-h-screen bg-base-200">
+    <div className=" md:px-[140px] py-5 min-h-screen bg-base-200 px-2">
       <div className="">
-        <p className="text-center text-4xl font-semibold">Add Toys </p>
+        <div className="relative w-full">
+          <img
+            src="https://i.ibb.co/xYYX7Bj/change-1.jpg"
+            alt=""
+            className="w-full h-[250px] rounded-xl"
+          />
+          <div className="absolute bottom-0 left-10 md:bottom-[150px] md:left-[200px]">
+            <p className="text-center text-4xl font-semibold">Add New Toys </p>
+          </div>
+        </div>
+
         <form className="mt-[100px]" onSubmit={handleSubmit(onSubmit)}>
           {/* register your input into the hook by invoking the "register" function */}
           <div className="flex md:flex-row flex-col w-full gap-5">
@@ -29,9 +59,10 @@ const AddToys = () => {
               </label>
               <input
                 defaultValue={""}
-                {...register("toyName")}
+                {...register("toyName", { required: true })}
                 className="input input-bordered w-full "
                 placeholder="toys name"
+                type="text"
               />
             </div>
 
@@ -41,9 +72,10 @@ const AddToys = () => {
               </label>
               <input
                 defaultValue={""}
-                {...register("photo")}
+                {...register("photo", { required: true })}
                 className="input input-bordered w-full"
                 placeholder="photo url"
+                type="text"
               />
             </div>
           </div>
@@ -54,8 +86,8 @@ const AddToys = () => {
                 <span>Seller Name</span>
               </label>
               <input
-                defaultValue={""}
-                {...register("sellerName")}
+                defaultValue={user?.name}
+                {...register("sellerName", { required: true })}
                 className="input input-bordered w-full"
                 placeholder="seller name"
               />
@@ -66,8 +98,8 @@ const AddToys = () => {
                 <span>Seller Email</span>
               </label>
               <input
-                defaultValue={""}
-                {...register("sellerEmail")}
+                value={user?.email}
+                {...register("sellerEmail", { required: true })}
                 className="input input-bordered w-full"
                 placeholder="seller email"
               />
@@ -81,7 +113,7 @@ const AddToys = () => {
               </label>
               <input
                 defaultValue={""}
-                {...register("price")}
+                {...register("price", { required: true })}
                 className="input input-bordered w-full"
                 placeholder="price"
               />
@@ -105,21 +137,21 @@ const AddToys = () => {
             <div className="md:w-1/2">
               <select
                 className="select select-bordered w-full mt-7"
-                {...register("category")}
+                {...register("category", { required: true })}
               >
                 <option disabled selected>
                   Select The Category
                 </option>
-                <option value="female"> Math Toys</option>
-                <option value="male">Language Toys</option>
-                <option value="other">Science Toys</option>
+                <option value="Math Toys"> Math Toys</option>
+                <option value="Language Toys">Language Toys</option>
+                <option value="Science Toys">Science Toys</option>
               </select>
             </div>
 
             <div className="md:w-1/2">
               <select
                 className="select select-bordered w-full mt-7"
-                {...register("rating")}
+                {...register("rating", { required: true })}
               >
                 <option disabled selected>
                   Select Rating
@@ -139,7 +171,7 @@ const AddToys = () => {
             </label> */}
             <textarea
               defaultValue={""}
-              {...register("description")}
+              {...register("description", { required: true })}
               placeholder="Detail description"
               className="textarea textarea-bordered textarea-lg w-full mt-7 "
               type="text"
@@ -156,7 +188,7 @@ const AddToys = () => {
             <input
               type="submit"
               value={"Add Toy"}
-              className="btn btn-primary "
+              className="btn btn-primary btn-block"
             />
           </div>
         </form>

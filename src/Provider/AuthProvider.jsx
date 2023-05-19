@@ -17,10 +17,10 @@ const AuthProvider = ({children}) => {
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
 
-  console.log(user?.displayName)
+  // console.log(user?.displayName)
   const userName = user?.displayName;
   const userPhotoUrl = user?.photoURL;
-  console.log(userName,userPhotoUrl)
+  // console.log(userName,userPhotoUrl)
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -49,7 +49,7 @@ const AuthProvider = ({children}) => {
   useEffect(() => {
     const unSubscriber = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("onAuthStateChanged", currentUser);
+      // console.log("onAuthStateChanged", currentUser);
       setLoading(false);
     });
     return () => {
