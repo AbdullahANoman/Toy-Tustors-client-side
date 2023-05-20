@@ -2,19 +2,22 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
+import { Link } from "react-router-dom";
+
+
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [action, setAction] = useState(true);
-
+  const [modalShow, setModalShow] = React.useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [user, action]);
-  
-  useTitle('My Toys')
+
+  useTitle("My Toys");
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -39,9 +42,22 @@ const MyToys = () => {
           });
       }
     });
-    console.log(_id);
   };
-  console.log(toys);
+  const handleUpdate = (toy) => {
+    console.log(toy);
+    fetch(`http://localhost:5000/updateToy/${toy?._id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(toy),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.modifiedCount > 0) {
+          setControl(!control);
+        }
+        console.log(result);
+      });
+  };
   return (
     <>
       <div>
@@ -71,8 +87,12 @@ const MyToys = () => {
                 <td className="text-center">{toy?.price}</td>
                 <td className="text-center">{toy?.quantity}</td>
                 <td className="text-center">
-                  <button className="btn btn-primary">Update</button>
+                  <Link to={`/update/${toy._id}`}><label htmlFor="my-modal-3" className="btn btn-primary" >
+                    Update
+                  </label></Link>
+                  
                 </td>
+                
                 <td>
                   <button
                     onClick={() => handleDelete(toy?._id)}
@@ -82,10 +102,17 @@ const MyToys = () => {
                   </button>
                 </td>
               </tr>
+              
             ))}
           </tbody>
         </table>
       </div>
+      {/* {
+        toys.map((toy)=>(
+          <UpdateToy toy={toy} key={toy._id}></UpdateToy>
+        ))
+      } */}
+      
     </>
   );
 };
