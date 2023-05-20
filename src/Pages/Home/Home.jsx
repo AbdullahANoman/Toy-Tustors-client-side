@@ -7,6 +7,7 @@ const Home = () => {
     <>
       <Banner></Banner>
       <Gallary></Gallary>
+      <AllCategory></AllCategory>
     </>
   );
 };
