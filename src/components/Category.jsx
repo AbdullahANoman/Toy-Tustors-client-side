@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Rating from "react-rating";
 import { FaRegStar, FaStar, FaStarHalf, FaStarHalfAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Category = ({ job }) => {
+  const {user} = useContext(AuthContext)
+
+  const notify = () => toast("You have to log in first to view details");
+
   console.log(job);
   const { photo, price, rating, toyName, _id } = job || {};
   return (
@@ -27,8 +34,10 @@ const Category = ({ job }) => {
           />
         </p>
         <div className="card-actions justify-end">
-          <Link className="btn btn-primary btn-block mt-2" to={`/details/${_id}`}><button>View Details</button></Link>
+          <Link onClick={user?'':notify}  className="btn btn-primary btn-block mt-2" to={`/details/${_id}`}><button > View Details</button></Link>
+          <ToastContainer />
         </div>
+
       </div>
     </div>
   );
