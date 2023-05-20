@@ -8,6 +8,15 @@ const AllToys = () => {
   const [toys, setToys] = useState(loadToys);
   console.log(toys);
   
+
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/searchToy/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setToys(data);
+      });
+  };
   return (
     <>
       <div>
@@ -20,7 +29,7 @@ const AllToys = () => {
           placeholder="Search With Toy Name"
           className="input w-full max-w-xs border-black "
         />
-        <button className="btn btn-primary">Search</button>
+        <button onClick={handleSearch} className="btn btn-primary">Search</button>
       </div>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
