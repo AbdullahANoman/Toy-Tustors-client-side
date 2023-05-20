@@ -51,7 +51,7 @@ const AllCategory = () => {
           </div>
         </div>
       </div>
-      <div className="jobs-container mt-5 mb-5 row">
+      <div className=" mt-5 mb-10 grid grid-cols-1 md:grid-cols-3">
         {toys?.map((job) => (
           <Category key={job._id} job={job}></Category>
         ))}
