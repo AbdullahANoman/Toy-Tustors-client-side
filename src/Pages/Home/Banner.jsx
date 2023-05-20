@@ -10,13 +10,12 @@ const Banner = () => {
         />
         <div className="absolute flex  gap-2  h-full w-full pl-10 items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] rounded-xl">
           <div className="text-white space-y-10 w-1/2 ">
-            <h2 className="text-6xl">Affordable Price For Car Servicing</h2>
-            <p>We make your children happier with the best toys</p>
+            <h2 className="text-6xl font-extrabold ">Fun Toys For <p className='mt-2'>Your Kids</p>
+            </h2>
+            <p >Browse through our huge collection of fun toys, dolls, puzzle games and more for your kids. Shop, play and create fond memories with your little ones!</p>
             <div className="">
-              <button className="btn bg-[#FF3811] mr-5">Discover More</button>
-              <button className="btn btn-outline text-white">
-                Latest Project
-              </button>
+              <button className="btn bg-[#FF3811] mr-5">Shop Now</button>
+              
             </div>
           </div>
         </div>

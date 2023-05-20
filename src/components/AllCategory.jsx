@@ -19,7 +19,7 @@ const AllCategory = () => {
   };
   return (
     <div>
-      <h1 className="title text-center mt-5 p-5">Available Job's</h1>
+      <h1 className="text-5xl font-bold text-center py-20 text-[#1A2B5F] ">Shop By Category</h1>
 
       <div className="tab-container text-center">
         <div className="text-center w-100 mx-auto">
