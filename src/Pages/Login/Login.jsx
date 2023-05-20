@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLoginButton from "../../Shared/SocialLoginButton/SocialLoginButton";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const [user, setUser] = useState(null);
@@ -16,7 +17,7 @@ const Login = () => {
   console.log(location);
   const from = location.state?.from.pathname || "/";
   const navigate = useNavigate();
-
+  useTitle('Login')
   const handleLogin = (event) => {
     setError("");
     setSuccess("");

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -12,7 +13,8 @@ const MyToys = () => {
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [user, action]);
-
+  
+  useTitle('My Toys')
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",

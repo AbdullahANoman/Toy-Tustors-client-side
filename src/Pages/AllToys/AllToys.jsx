@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ToysRow from "./ToysRow";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const [searchText, setSearchText] = useState("");
   const loadToys = useLoaderData();
   const [toys, setToys] = useState(loadToys);
   console.log(toys);
-  
+  useTitle('All Toys')
 
   const handleSearch = () => {
     fetch(`http://localhost:5000/searchToy/${searchText}`)
