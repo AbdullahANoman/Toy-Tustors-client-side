@@ -5,9 +5,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, logOut, userName, userPhotoUrl } = useContext(AuthContext);
-  console.log(userName, userPhotoUrl);
-
+  const {user, logOut} = useContext(AuthContext);
+  // console.log(userName, userPhotoUrl);
+  console.log(user)
   const handleLogout = () => {
     logOut();
   };
@@ -94,11 +94,11 @@ const Navbar = () => {
               {user ? (
                 <>
                   <div className="flex items-center gap-2">
-                    <div className="w-8  rounded-full">
+                    <div className="w-10  rounded-full">
                       <img
-                        src={userPhotoUrl}
+                        src={user?.photoURL}
                         className="rounded-full "
-                        title={userName}
+                        title={user?.displayName}
                       />
                     </div>
 

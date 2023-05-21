@@ -12,7 +12,7 @@ const Gallary = () => {
         We design toys not just for kids <br /> but with kids
       </p>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div data-aos="zoom-in-right">
+        <div data-aos="fade-up">
           <img
             src="https://i.ibb.co/Kjk6Rz4/post19-copyright-650x572.jpg"
             className="w-[350px] rounded-2xl"
@@ -23,7 +23,7 @@ const Gallary = () => {
             <p>------</p>
           </div>
         </div>
-        <div data-aos="zoom-in-right">
+        <div data-aos="fade-down">
           <img
             src="https://i.ibb.co/XxQ4W0X/4.webp"
             className="w-[350px] rounded-2xl"
@@ -34,7 +34,7 @@ const Gallary = () => {
             <p>------</p>
           </div>
         </div>
-        <div data-aos="zoom-in-left"> 
+        <div data-aos="fade-up"> 
           <img
             src="https://i.ibb.co/r5GpFHz/1-a6e08ebb-46eb-4402-84b4-7cd13ededd8d.webp"
             className="w-[350px] rounded-2xl"
@@ -45,7 +45,7 @@ const Gallary = () => {
             <p>------</p>
           </div>
         </div>
-        <div data-aos="zoom-in-left">
+        <div data-aos="fade-down">
           <img
             src="https://i.ibb.co/VWgXgS8/2.webp"
             className="w-[350px] rounded-2xl"

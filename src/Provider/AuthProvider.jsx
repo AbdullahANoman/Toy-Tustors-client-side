@@ -18,8 +18,8 @@ const AuthProvider = ({children}) => {
   const [loading, setLoading] = useState(true);
 
   // console.log(user?.displayName)
-  const userName = user?.displayName;
-  const userPhotoUrl = user?.photoURL;
+  // const userName = user?.displayName;
+  // const userPhotoUrl = user?.photoURL;
   // console.log(userName,userPhotoUrl)
   const createUser = (email, password) => {
     setLoading(true);
@@ -30,7 +30,7 @@ const AuthProvider = ({children}) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
   const updateNamePhoto = (name,photoUrl) =>{
-    // setLoading(true)
+    setLoading(true)
     return updateProfile(auth.currentUser,{
         displayName : name,
         photoURL : photoUrl
@@ -57,8 +57,7 @@ const AuthProvider = ({children}) => {
     };
   }, []);
   const authInfo = {
-    userName,
-    userPhotoUrl,
+
     loading,
     user,
     createUser,
