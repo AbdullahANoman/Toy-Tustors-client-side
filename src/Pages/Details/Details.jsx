@@ -1,9 +1,14 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Rating from "react-rating";
 import { FaRegStar, FaStar, FaStarHalf, FaStarHalfAlt } from "react-icons/fa";
 import useTitle from "../../hooks/useTitle";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 const Details = () => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   const toy = useLoaderData();
   useTitle('Details')
   const {

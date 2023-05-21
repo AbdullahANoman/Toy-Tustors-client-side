@@ -1,13 +1,18 @@
 import React, { useContext, useState } from "react";
 
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useNavigation } from "react-router-dom";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLoginButton from "../../Shared/SocialLoginButton/SocialLoginButton";
 import useTitle from "../../hooks/useTitle";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const Login = () => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   const [user, setUser] = useState(null);
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");

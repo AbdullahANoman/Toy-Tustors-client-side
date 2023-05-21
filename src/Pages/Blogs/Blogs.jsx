@@ -1,7 +1,13 @@
 import React from "react";
 import useTitle from "../../hooks/useTitle";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const Blogs = () => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   useTitle("Blogs");
   return (
     <div className="mt-10 my-container py-20">

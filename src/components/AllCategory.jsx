@@ -2,8 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Category from "./Category";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../Pages/LoadingSpinner/LoadingSpinner";
 
 const AllCategory = () => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   const [toys,setToys] = useState([])
   const [activeTab, setActiveTab] = useState("math");
   useEffect(()=>{
@@ -23,27 +29,27 @@ const AllCategory = () => {
 
       <div className="tab-container text-center">
         <div className="text-center w-100 mx-auto">
-          <div className="tabs flex justify-center items-center">
+          <div className="tabs flex justify-center items-center gap-2 mb-10">
             <div
               onClick={() => handleTabClick("math")}
-              className={`cursor-pointer px-6  py-5 text-xl  ${
-                activeTab == "math" ? " bg-red-500 text-white" : ""
+              className={`cursor-pointer px-6  py-2 text-xl border rounded-3xl hover:bg-[#66CCFF] hover:text-white ${
+                activeTab == "math" ? " bg-[#66CCFF] text-white font-semibold" : ""
               }`}
             >
               Math Toys
             </div>
             <div
               onClick={() => handleTabClick("science")}
-              className={`cursor-pointer px-6  py-5 text-xl ${
-                activeTab == "science" ? " bg-red-500 text-white" : ""
+              className={`cursor-pointer px-6  py-2 text-xl border rounded-3xl hover:bg-[#66CCFF] hover:text-white ${
+                activeTab == "science" ? " bg-[#66CCFF] text-white font-semibold" : ""
               }`}
             >
               Science Toys
             </div>
             <div
               onClick={() => handleTabClick("language")}
-              className={`cursor-pointer px-6  py-5 text-xl ${
-                activeTab == "language" ? " bg-red-500 text-white" : ""
+              className={`cursor-pointer px-6  py-2 text-xl border rounded-3xl hover:bg-[#66CCFF] hover:text-white ${
+                activeTab == "language" ? " bg-[#66CCFF] text-white font-semibold" : ""
               }`}
             >
               Language Toys

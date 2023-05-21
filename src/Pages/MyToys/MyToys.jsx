@@ -2,11 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 
 
 const MyToys = () => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [action, setAction] = useState(true);
