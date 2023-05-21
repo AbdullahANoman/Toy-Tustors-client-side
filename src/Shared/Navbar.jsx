@@ -12,7 +12,7 @@ const Navbar = () => {
     logOut();
   };
   return (
-    <div className="bg-gradient-to-r from-[#070d31] to-[#9873FF] mt-0 text-white">
+    <div className="bg-base-200 mt-0 text-black">
       <div className=" px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
@@ -127,7 +127,7 @@ const Navbar = () => {
               title="Open Menu"
               onClick={() => setIsMenuOpen(true)}
             >
-              <Bars3BottomRightIcon className="w-5 text-white" />
+              <Bars3BottomRightIcon className="w-5 text-black" />
             </button>
             {isMenuOpen && (
               <div className="absolute top-0 left-0 w-full z-10">

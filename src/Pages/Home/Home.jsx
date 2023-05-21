@@ -5,6 +5,7 @@ import Banner from "./Banner";
 import Gallary from "./Gallary";
 import Subscriber from "./Subscriber";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import ShopNow from "./ShopNow";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -17,6 +18,7 @@ const Home = () => {
       <Banner></Banner>
       <Gallary></Gallary>
       <AllCategory></AllCategory>
+      <ShopNow></ShopNow>
       <Subscriber></Subscriber>
     </>
   );

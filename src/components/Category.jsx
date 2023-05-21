@@ -34,7 +34,7 @@ const Category = ({ job }) => {
           />
         </p>
         <div className="card-actions justify-end">
-          <Link onClick={user?'':notify}  className="btn btn-primary btn-block mt-2" to={`/details/${_id}`}><button > View Details</button></Link>
+          <Link onClick={user?'':notify}  className="btn gradient-button-4 text-xl font-bold border-none btn-block mt-2" to={`/details/${_id}`}><button > View Details</button></Link>
           <ToastContainer />
         </div>
 

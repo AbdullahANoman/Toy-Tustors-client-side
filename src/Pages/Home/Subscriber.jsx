@@ -2,7 +2,7 @@ import React from "react";
 
 const Subscriber = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 items-center md:px-10 px-3 py-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 items-center md:px-10 px-3 py-20  ">
       <div
         data-aos="fade-right"
         data-aos-offset="300"
