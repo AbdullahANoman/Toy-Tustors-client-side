@@ -7,7 +7,7 @@ const AllCategory = () => {
   const [toys,setToys] = useState([])
   const [activeTab, setActiveTab] = useState("math");
   useEffect(()=>{
-    fetch(`http://localhost:5000/allToys/${activeTab}`)
+    fetch(`https://toys-marketplace-server-ashen.vercel.app/allToys/${activeTab}`)
     .then(res=>res.json())
     .then(data=>{
       setToys(data)

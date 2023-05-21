@@ -11,7 +11,7 @@ const AllToys = () => {
   useTitle('All Toys')
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/searchToy/${searchText}`)
+    fetch(`https://toys-marketplace-server-ashen.vercel.app/searchToy/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

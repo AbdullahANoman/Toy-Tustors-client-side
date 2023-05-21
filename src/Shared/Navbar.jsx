@@ -173,7 +173,7 @@ const Navbar = () => {
                             </Link>
                           </li>
                           <li className="text-black">
-                            <Link to="/add Toys" className="default">
+                            <Link to="/addToys" className="default">
                               Add Toys
                             </Link>
                           </li>

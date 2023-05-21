@@ -12,7 +12,7 @@ const MyToys = () => {
   const [action, setAction] = useState(true);
   const [modalShow, setModalShow] = React.useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://toys-marketplace-server-ashen.vercel.app/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [user, action]);
@@ -29,7 +29,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allToys/${_id}`, {
+        fetch(`https://toys-marketplace-server-ashen.vercel.app/allToys/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -45,7 +45,7 @@ const MyToys = () => {
   };
   const handleUpdate = (toy) => {
     console.log(toy);
-    fetch(`http://localhost:5000/updateToy/${toy?._id}`, {
+    fetch(`https://toys-marketplace-server-ashen.vercel.app/updateToy/${toy?._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(toy),

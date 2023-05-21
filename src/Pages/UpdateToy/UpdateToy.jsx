@@ -12,7 +12,7 @@ const UpdateToy = () => {
     const description = form.description.value;
     const updateToy = {price,quantity,description}
     console.log(price, quantity, description);
-    fetch(`http://localhost:5000/updateToy/${toy?._id}`, {
+    fetch(`https://toys-marketplace-server-ashen.vercel.app/updateToy/${toy?._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateToy),
