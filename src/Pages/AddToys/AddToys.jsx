@@ -27,9 +27,9 @@ const AddToys = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "Do you want to continue",
+            text: "Your toy has been added ",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "OK",
           });
         }
       });

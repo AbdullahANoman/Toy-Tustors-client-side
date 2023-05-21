@@ -2,6 +2,7 @@ import { FaGg,FaEdgeLegacy,FaPhoneAlt,FaFacebookF,FaInstagram,FaTwitter,FaYoutub
 
 const Footer = () => {
   return (
+    <div className="bg-base-200">
     <footer className="footer p-10 bg-base-200 text-base-content">
       <div>
         <div className="flex items-center gap-3">
@@ -72,8 +73,10 @@ const Footer = () => {
         </a>
       </div>
       
-      
     </footer>
+    <hr className="text-white" />
+      <p className="text-center text-sm mt-2 font-semibold"> &copy; Copyright 2023. Powered by ToyTutors</p>
+      </div>
   );
 };
 
