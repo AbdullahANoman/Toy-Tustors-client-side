@@ -12,7 +12,7 @@ const ToysRow = ({toy}) => {
       <td className="text-center">{price}</td>
       <td className="text-center">{quantity}</td>
       <td className="text-center">
-        <Link to={`/details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+        <Link to={`/details/${_id}`}><button className="btn bg-[#32BDF2] border-none hover:bg-[#FF6A98] ">View Details</button></Link>
       </td>
     </tr>
   );

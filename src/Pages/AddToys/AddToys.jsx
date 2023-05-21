@@ -190,7 +190,7 @@ const AddToys = () => {
             <input
               type="submit"
               value={"Add Toy"}
-              className="btn btn-primary btn-block"
+              className="btn bg-[#32BDF2] border-none hover:bg-[#FF6A98]  btn-block"
             />
           </div>
         </form>

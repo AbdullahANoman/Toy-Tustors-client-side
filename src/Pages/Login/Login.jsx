@@ -1,6 +1,11 @@
 import React, { useContext, useState } from "react";
 
-import { Link, useLocation, useNavigate, useNavigation } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useNavigation,
+} from "react-router-dom";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -22,7 +27,7 @@ const Login = () => {
   console.log(location);
   const from = location.state?.from.pathname || "/";
   const navigate = useNavigate();
-  useTitle('Login')
+  useTitle("Login");
   const handleLogin = (event) => {
     setError("");
     setSuccess("");
@@ -46,7 +51,11 @@ const Login = () => {
   return (
     <div className="hero min-h-screen  md:flex-row flex flex-col ">
       <div className="md:w-1/2 h-1/3 md:h-full">
-        <img src="https://i.ibb.co/Rgm1NYk/6310507.jpg" alt="" className="w-full" />
+        <img
+          src="https://i.ibb.co/Rgm1NYk/6310507.jpg"
+          alt=""
+          className="w-full"
+        />
       </div>
       <form
         onSubmit={handleLogin}
@@ -80,26 +89,25 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <p onClick={() => setShow(!show)}>
-                  <button className="absolute left-[320px] top-[175px]">
-                    {show ? (
-                      <span>
-                        <FaEyeSlash></FaEyeSlash>
-                      </span>
-                    ) : (
-                      <span>
-                        <FaEye></FaEye>
-                      </span>
-                    )}
-                  </button>
-                </p>
-              </label>
+              <label className="label"></label>
               {error && <p className="text-red-600">{error}</p>}
               {success && <p className="text-green-600">{success}</p>}
             </div>
+            <p onClick={() => setShow(!show)}>
+              <button className="absolute left-[320px] top-[175px]">
+                {show ? (
+                  <span>
+                    <FaEyeSlash></FaEyeSlash>
+                  </span>
+                ) : (
+                  <span>
+                    <FaEye></FaEye>
+                  </span>
+                )}
+              </button>
+            </p>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn bg-[#32BDF2] border-none hover:bg-[#FF6A98] ">Login</button>
             </div>
             <p className="text-sm">
               Don't Have An Account ?{" "}

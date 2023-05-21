@@ -30,7 +30,7 @@ const AllToys = () => {
           placeholder="Search With Toy Name"
           className="input w-full max-w-xs border-black "
         />
-        <button onClick={handleSearch} className="btn btn-primary">Search</button>
+        <button onClick={handleSearch} className="btn bg-[#32BDF2] border-none hover:bg-[#FF6A98] ">Search</button>
       </div>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">

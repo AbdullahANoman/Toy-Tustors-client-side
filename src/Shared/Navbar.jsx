@@ -104,7 +104,7 @@ const Navbar = () => {
 
                     <button
                       onClick={handleLogout}
-                      className="me-3 mb-5 btn-primary"
+                      className="me-3 mb-5 btn bg-[#32BDF2] border-none hover:bg-[#FF6A98] "
                       variant="light"
                     >
                       Log Out
@@ -113,7 +113,7 @@ const Navbar = () => {
                 </>
               ) : (
                 <Link to="/login">
-                  <button className="btn-primary hidden lg:flex ">Login</button>
+                  <button className="btn bg-[#32BDF2] border-none hover:bg-[#FF6A98] hidden lg:flex ">Login</button>
                 </Link>
               )}
             </div>

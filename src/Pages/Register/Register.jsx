@@ -48,7 +48,7 @@ const Register = () => {
 
         console.log(loggedUser);
         setUser(loggedUser);
-        updateNamePhoto(name, photoUrl);
+        updateNamePhoto(name,photoUrl);
         form.reset();
         setSuccess("User Created Successfully ");
         refresh();
@@ -58,11 +58,11 @@ const Register = () => {
       });
   };
   return (
-    <div className="hero min-h-screen flex">
-      <div className="w-1/2">
+    <div className="hero min-h-screen md:flex-row flex flex-col">
+      <div className="md:w-1/2 w-full">
         <img src="https://i.ibb.co/xGt6Z27/6343845.jpg" alt="" />
       </div>
-      <div className="hero-content flex-col w-1/2 mt-5 ">
+      <div className="hero-content flex-col md:w-1/2 mt-5 ">
         <div className="text-center lg:text-left">
           <h1 className="md:text-5xl font-bold mb-4">Register Now !</h1>
         </div>
@@ -148,7 +148,7 @@ const Register = () => {
             {error && <p className="text-red-600">{error}</p>}
             {success && <p className="text-green-600">{success}</p>}
             <div className="form-control mt-6">
-              <button className="btn btn-primary " disabled={!accepted}>
+              <button className="btn bg-[#32BDF2] border-none hover:bg-[#FF6A98] " disabled={!accepted}>
                 Register
               </button>
             </div>

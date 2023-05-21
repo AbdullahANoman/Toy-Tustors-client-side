@@ -92,7 +92,7 @@ const MyToys = () => {
                 <td className="text-center">{toy?.price}</td>
                 <td className="text-center">{toy?.quantity}</td>
                 <td className="text-center">
-                  <Link to={`/update/${toy._id}`}><label htmlFor="my-modal-3" className="btn btn-primary" >
+                  <Link to={`/update/${toy._id}`}><label htmlFor="my-modal-3" className="btn bg-[#32BDF2] border-none hover:bg-[#FF6A98] " >
                     Update
                   </label></Link>
                   
@@ -101,7 +101,7 @@ const MyToys = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(toy?._id)}
-                    className="btn btn-primary"
+                    className="btn bg-[#32BDF2] border-none hover:bg-[#FF6A98] "
                   >
                     Delete
                   </button>
