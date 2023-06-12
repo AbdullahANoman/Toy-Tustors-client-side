@@ -2,8 +2,8 @@ import { FaGg,FaEdgeLegacy,FaPhoneAlt,FaFacebookF,FaInstagram,FaTwitter,FaYoutub
 
 const Footer = () => {
   return (
-    <div className="bg-base-200">
-    <footer className="footer p-10 bg-base-200 text-base-content">
+    <div className="bg-base-200 ">
+    <footer className="footer p-10 bg-base-200 text-base-content  px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
       <div>
         <div className="flex items-center gap-3">
           <img
