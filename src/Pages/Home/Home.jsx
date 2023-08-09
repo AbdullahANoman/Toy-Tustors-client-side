@@ -6,6 +6,13 @@ import Gallary from "./Gallary";
 import Subscriber from "./Subscriber";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import ShopNow from "./ShopNow";
+import Brand from "./Brand";
+import BestSeller from "./BestSeller";
+import Bannner from "./Bannner";
+import Test from "./Test";
+import PlaceForKids from "./PlaceForKids";
+import Teaching from "./Teaching";
+import Education from "./Education";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -15,9 +22,16 @@ const Home = () => {
   useTitle('Home')
   return (
     <>
-      <Banner></Banner>
+      {/* <Banner></Banner> */}
+      {/* <Bannner></Bannner> */}
+      <Test></Test>
       <Gallary></Gallary>
+      <BestSeller></BestSeller>
+      <Teaching></Teaching>
       <AllCategory></AllCategory>
+      <Education></Education>
+      <Brand></Brand>
+      <PlaceForKids></PlaceForKids>
       <ShopNow></ShopNow>
       <Subscriber></Subscriber>
     </>

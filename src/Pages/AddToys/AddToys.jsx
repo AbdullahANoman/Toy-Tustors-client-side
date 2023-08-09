@@ -39,7 +39,7 @@ const AddToys = () => {
 
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-    <div className=" md:px-[140px] py-5 min-h-screen bg-base-200 px-2">
+    <div className=" md:px-[140px] py-5 min-h-screen bg-base-200 px-2 max-w-7xl	mx-auto mb-10">
       <div className="">
         <div className="relative w-full">
           <img

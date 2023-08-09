@@ -25,7 +25,7 @@ const AllCategory = () => {
     setActiveTab(tabName);
   };
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center" id="category">
       <div className="">
         <h1 className="text-5xl font-bold text-center py-20 text-[#1A2B5F] ">
           Shop By Category

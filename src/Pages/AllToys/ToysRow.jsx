@@ -5,7 +5,7 @@ const ToysRow = ({toy}) => {
     const {_id,toyName,category,price,quantity} = toy;
     console.log(_id,toyName,category,price,quantity)
   return (
-    <tr>
+    <tr className="max-w-7xl	mx-auto">
       <td className="text-center">{toy?.sellerName}</td>
       <td className="text-center">{toyName}</td>
       <td className="text-center">{category}</td>

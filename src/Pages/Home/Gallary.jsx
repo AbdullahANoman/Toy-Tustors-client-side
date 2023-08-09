@@ -2,7 +2,7 @@ import React from "react";
 
 const Gallary = () => {
   return (
-    <div className="px-2">
+    <div className="px-2 max-w-7xl	mx-auto">
       {/* <img src="https://i.ibb.co/VWgXgS8/2.webp" alt="" />
             <img src="https://i.ibb.co/r5GpFHz/1-a6e08ebb-46eb-4402-84b4-7cd13ededd8d.webp" alt="" />
             <img src="https://i.ibb.co/XxQ4W0X/4.webp" alt="" />

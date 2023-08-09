@@ -64,7 +64,7 @@ const MyToys = () => {
       });
   };
   return (
-    <>
+    <div className="max-w-7xl	mx-auto">
       <div>
         <p className="text-center text-4xl py-10">All toys</p>
       </div>
@@ -118,7 +118,7 @@ const MyToys = () => {
         ))
       } */}
       
-    </>
+    </div>
   );
 };
 

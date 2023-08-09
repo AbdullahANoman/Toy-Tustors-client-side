@@ -19,8 +19,8 @@ const AllToys = () => {
       });
   };
   return (
-    <>
-      <div>
+    <div className="max-w-7xl	mx-auto mb-10">
+      <div className="">
         <p className="text-center text-4xl py-10">All toys</p>
       </div>
       <div className="flex justify-center gap-2 mb-10">
@@ -53,7 +53,7 @@ const AllToys = () => {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 };
 

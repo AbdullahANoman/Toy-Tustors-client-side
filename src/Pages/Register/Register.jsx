@@ -58,7 +58,7 @@ const Register = () => {
       });
   };
   return (
-    <div className="hero min-h-screen md:flex-row flex flex-col">
+    <div className="hero min-h-screen md:flex-row flex flex-col max-w-7xl	mx-auto">
       <div className="md:w-1/2 w-full">
         <img src="https://i.ibb.co/xGt6Z27/6343845.jpg" alt="" />
       </div>

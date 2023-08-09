@@ -1,0 +1,16 @@
+.bestSellerBackground {
+    background-image: url('https://whiterabbit.axiomthemes.com/wp-content/uploads/2016/04/bg-1.png?id=986');
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.bannerBackground {
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bannerBackground h1{
+    color: red;
+}

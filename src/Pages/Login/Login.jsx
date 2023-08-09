@@ -49,7 +49,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero min-h-screen  md:flex-row flex flex-col ">
+    <div className="hero min-h-screen max-w-7xl	mx-auto md:flex-row flex flex-col ">
       <div className="md:w-1/2 h-1/3 md:h-full">
         <img
           src="https://i.ibb.co/Rgm1NYk/6310507.jpg"

@@ -2,8 +2,14 @@ import React from "react";
 import { FaCartPlus } from "react-icons/fa";
 
 const ShopNow = () => {
+  const handleCategory = () =>{
+    const targetElement = document.getElementById('category'); // Replace 'targetElement' with the actual ID of your target element
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling to the target element
+        }
+  }
   return (
-    <div className="mx-auto flex justify-center py-10">
+    <div  className="hidden md:flex justify-center py-10 max-w-7xl	mx-auto">
       <div className="relative text-center  ">
         <img
           src="https://htmldemo.net/legend/legend/img/banner/32.jpg"
@@ -18,7 +24,7 @@ const ShopNow = () => {
             the kids with out huge selection of online toys shops
           </p>
           <div className="flex justify-center">
-          <button className="flex  justify-center items-center gap-2 md:mt-5 text-black px-3 py-2 rounded-2xl bg-white "> <FaCartPlus></FaCartPlus> Shop Now </button>
+          <button onClick={handleCategory} className="flex  justify-center items-center gap-2 md:mt-5 text-black px-3 py-2 rounded-2xl bg-white "> <FaCartPlus></FaCartPlus> Shop Now </button>
           </div>
         </div>
       </div>

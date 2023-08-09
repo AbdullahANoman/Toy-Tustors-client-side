@@ -1,0 +1,21 @@
+[
+    {
+        "id" : 1 ,
+        "image" : "https://i.ibb.co/5s6688X/front-view-kid-playing-with-wooden-toyds-1-2.png",
+        "header" : "Fun Toys For Your Kids",
+        "subHeader" : "Browse through our huge collection of fun toys, dolls, puzzle games and more for your kids. Shop, play and create fond memories with your little ones!"
+    },
+    {
+        "id" : 2 ,
+        "image" : "https://i.ibb.co/zRQN3b3/set-children-toys-2.png",
+        "header" : "Fun Toys For Your Kids",
+        "subHeader" : "Browse through our huge collection of fun toys, dolls, puzzle games and more for your kids. Shop, play and create fond memories with your little ones!"
+    },
+    {
+        "id" : 3 ,
+        "image" : "https://i.ibb.co/C9fLHz9/fluffy-toy-texture-close-up.png",
+        "header" : "Fun Toys For Your Kids",
+        "subHeader" : "Browse through our huge collection of fun toys, dolls, puzzle games and more for your kids. Shop, play and create fond memories with your little ones!"
+    }
+]
+
